@@ -9,24 +9,21 @@
 <body>
     
     <style>
-        
         body{
             background-color: rgb(0, 0, 0);
             color: rgb(255, 255, 255);
             font-family: Arial, Helvetica, sans-serif;
-        }
-        .sd{
-           
-           font-size: 40px;
+            }
+        
+        .container-result{
+            font-size: 40px;
            margin-bottom: -8px;
            margin-top: 5px;
            padding: 10px 0px ;
            width: 50%;
            height: 50px;
-          
-           
-          
-        }
+            }
+        
          .b1{
             font-size: 30px;
             height: 60px;
@@ -36,88 +33,71 @@
             background-color:rgb(51, 51, 51);
             border: none;
             margin-right: 8px;
-           
-           }
-           .r {
+            }
+           .yb {
             background-color:rgb(254, 160, 10);;
            }
            
-           .clr{
+           .clear{
             font-size: 15px;
            }
 
     </style>
 
-
-
-
-
-
-
-
-
-
-
-
-    <p class="sd"></p>
-
-  <div class="conteiner-number">
+        <p class="container-result"></p>
+    
     <p>
         <button class="b1" onclick="
-        update('1');
+            update('1');
         ">1</button>
 
         <button  class="b1"onclick="
-        update('2')
+            update('2')
         ">2</button>
 
         <button  class="b1"onclick="
-       update('3')
+           update('3')
         ">3</button>
-        <button   class="b1 r"onclick="
-        update('+')
-        ">+</button>
-
-
-       
-
         
+        <button   class="b1 yb"onclick="
+            update('+')
+        ">+</button>
     </p>
 
     <p>
         <button  class="b1"onclick="
-       update('4')
+           update('4')
         ">4</button>
         <button  class="b1"onclick="
-        update('5')
+            update('5')
         ">5</button>
 
         <button  class="b1"onclick="
-        update('6')
+            update('6')
         ">6</button>
         
-        <button  class="b1 r"onclick="
-       update('-')
+        <button  class="b1 yb"onclick="
+           update('-')
         ">-</button>
-        
-        
-        
     </p>
 
     <p>
         <button class="b1" onclick="
-        update('7')
+            update('7')  
         ">7</button>
+    
         <button  class="b1"onclick="
-        update('8')
+            update('8')
+            
         ">8</button>
+        
         <button  class="b1"onclick="
-        update('9')
+            update('9')
         ">9</button>
-        <button  class="b1 r"onclick="
-        update('*')
+        
+        <button  class="b1 yb"onclick="
+            update('*')
         ">×</button>
-             
 </p>
 
 <p>
@@ -127,54 +107,42 @@
 
     <button class="b1" onclick="update('.')">.</button>
 
-
-        <button class="b1" onclick="
-      calculation= eval(calculation)
-      console.log(calculation)
-       localStorage.setItem('calc',calculation)
-       upde()
+    <button class="b1" onclick="
+        calculation= eval(calculation)
+        console.log(calculation)
+        localStorage.setItem('calc',calculation)
+        upde()
         ">=</button>
-        <button class="b1 r" onclick="
+    
+    <button class="b1 yb" onclick="
        update('/')
         ">÷</button>
-</p>
-
-
-
-
-<p >
-
-
-        <button  class="b1 clr"onclick="
+    </p>
+    
+    <p >
+        <button  class="b1 clear"onclick="
         calculation = ''
         console.log(calculation)
          localStorage.setItem('calc',calculation)
          upde()
-
         ">Clear</button>
     </p>
-    </div>
+    
 
     <script>
-
         let calculation =  localStorage.getItem('calc') || ''
         upde()
-
         
-       
-
         function update(value) {
-            
             calculation += value
             console.log(calculation)
             localStorage.setItem('calc',calculation)
             upde()
-            
-        }
+            }
 
         function upde() {
             document.querySelector('.sd').innerHTML = `${calculation}`
-        }
+            }
 
         //opsional
         /*function save(){
@@ -184,5 +152,6 @@
 
     </script>
 </body>
+
 
 </html>
