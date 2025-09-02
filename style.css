@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    }
+        
+.container-result{
+    font-size: 40px;
+    margin-bottom: -8px;
+    margin-top: 5px;
+    padding: 10px 0px ;
+    width: 50%;
+    height: 50px;
+}
+        
+.b1{
+    font-size: 30px;
+    height: 60px;
+    width: 60px;
+    border-radius: 35px;
+    color:white;
+    background-color:rgb(51, 51, 51);
+    border: none;
+    margin-right: 8px;
+}
+
+.yb {
+    background-color:rgb(254, 160, 10);;
+}
+           
+.clear{
+    font-size: 15px;
+}

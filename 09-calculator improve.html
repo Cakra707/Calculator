@@ -5,46 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     
-    <style>
-        body{
-            background-color: rgb(0, 0, 0);
-            color: rgb(255, 255, 255);
-            font-family: Arial, Helvetica, sans-serif;
-            }
-        
-        .container-result{
-            font-size: 40px;
-           margin-bottom: -8px;
-           margin-top: 5px;
-           padding: 10px 0px ;
-           width: 50%;
-           height: 50px;
-            }
-        
-         .b1{
-            font-size: 30px;
-            height: 60px;
-            width: 60px;
-            border-radius: 35px;
-            color:white;
-            background-color:rgb(51, 51, 51);
-            border: none;
-            margin-right: 8px;
-            }
-           .yb {
-            background-color:rgb(254, 160, 10);;
-           }
-           
-           .clear{
-            font-size: 15px;
-           }
-
-    </style>
-
-        <p class="container-result"></p>
+    <p class="container-result"></p>
     
     <p>
         <button class="b1" onclick="
@@ -108,7 +74,7 @@
     <button class="b1" onclick="update('.')">.</button>
 
     <button class="b1" onclick="
-        calculation= eval(calculation)
+        calculation = eval(calculation)
         console.log(calculation)
         localStorage.setItem('calc',calculation)
         upde()
@@ -123,36 +89,14 @@
         <button  class="b1 clear"onclick="
         calculation = ''
         console.log(calculation)
-         localStorage.setItem('calc',calculation)
-         upde()
+        localStorage.setItem('calc',calculation)
+        upde()
         ">Clear</button>
     </p>
     
 
-    <script>
-        let calculation =  localStorage.getItem('calc') || ''
-        upde()
-        
-        function update(value) {
-            calculation += value
-            console.log(calculation)
-            localStorage.setItem('calc',calculation)
-            upde()
-            }
+    <script src="data.js"></script>
 
-        function upde() {
-            document.querySelector('.sd').innerHTML = `${calculation}`
-            }
-
-        //opsional
-        /*function save(){
-            localStorage.setItem('calc',calculation)
-        }
-        */
-
-    </script>
 </body>
-
-
 </html>
 
