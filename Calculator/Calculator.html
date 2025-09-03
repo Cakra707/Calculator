@@ -74,8 +74,11 @@
     <button class="b1" onclick="update('.')">.</button>
 
     <button class="b1" onclick="
-        calculation = eval(calculation)
-        console.log(calculation)
+        try {
+             calculation = eval(calculation)
+        } catch {
+            calculation = 'Error';
+        }
         localStorage.setItem('calc',calculation)
         upde()
         ">=</button>

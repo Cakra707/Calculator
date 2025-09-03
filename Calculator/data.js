@@ -3,7 +3,6 @@ let calculation =  localStorage.getItem('calc') || ''
         
         function update(value) {
             calculation += value
-            console.log(calculation)
             localStorage.setItem('calc',calculation)
             upde()
             }
