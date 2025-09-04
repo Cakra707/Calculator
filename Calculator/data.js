@@ -1,31 +1,59 @@
-let calculation =  localStorage.getItem('calc') || ''
-        upde()
+
+const display = document.getElementById('display')
+display.value = localStorage.getItem('calc') || "";      
         
-        function update(value) {
-            calculation += value
-            localStorage.setItem('calc',calculation)
-            upde()
-            
-            }
 
-        function upde() {
-            document.querySelector('.container-result').innerHTML = `${calculation}`
-            }
-            
 
-        //opsional
-        /*function save(){
-            localStorage.setItem('calc',calculation)
+        function update(i) {
+            if (display.value === 'Error' || display.value === 'Infinity') {
+                display.value =i   
+
+            } else {
+                display.value +=i
+            }
+        
+            
+            save()
         }
-        */
-            function error() {
-            try {
-                calculation = eval(calculation)
-            } catch {
-                calculation = 'Error';  
-            }
-                
-            }
 
+       function clear2() {
+        display.value ="";
+        save()
+       }
+
+        function calculate() {
            
+            try { 
+                let percent = display.value.replace('%', '/100')
+
+                
+
+                let result = eval(percent)
+
+                if (isNaN(result)) {
+                    display.value ='Error';
+                
+                } else {
+                    display.value = result;
+                }
+                save()
+                 
+            } catch {
+                 display.value = 'Error' ;  
+            }
+        }
+
+
+        function deletee() {
+            if (display.value === 'Error' || display.value === 'Infinity') {
+                display.value =''
+            }else {
+                  display.value = display.value.toString().slice(0, -1)
+            }
+          
+        }
+
+        function save(){
+            localStorage.setItem('calc', display.value)
+        }  
        
