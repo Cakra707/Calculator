@@ -24,12 +24,13 @@ display.value = localStorage.getItem('calc') || "";
         function calculate() {
            
             try { 
-                let percent = display.value.replace('%', '/100')
-
-                
-
+               
+                let percent =  display.value.replace('%', '/100' )
+                .replace('×', '*')
+                .replace('÷', '/')
+    
                 let result = eval(percent)
-
+                
                 if (isNaN(result)) {
                     display.value ='Error';
                 
