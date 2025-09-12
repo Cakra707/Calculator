@@ -25,9 +25,9 @@ display.value = localStorage.getItem('calc') || "";
            
             try { 
                
-                let percent =  display.value.replace('%', '/100' )
-                .replace('×', '*')
-                .replace('÷', '/')
+                let percent =  display.value.replaceAll('%', '/100' )
+                .replaceAll('×', '*')
+                .replaceAll('÷', '/')
     
                 let result = eval(percent)
                 
